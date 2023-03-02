@@ -54,10 +54,10 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for the submit button */
 .btn {
-  background-color: #04AA6D;
-  color: black;
-  padding: 16px 20px;
-  border: none;
+  background-color: green;
+  color: white;
+  padding: 10px 10px;
+  border: white;
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
@@ -70,7 +70,7 @@ input[type=text]:focus, input[type=password]:focus {
 </head>
 <body>
 <div class="bg-img" align="center">
-    <h1>Iris Flower Species Prediction</h1>
+    <h1>IRIS FLOWER SPECIES PREDICTION </h1>
     <form method="post" action="/iris/species/prediction" class="container">
     <label>Sepal Lenght(cm):</label>
     <input type="text" name="SepalLenghtCm">
@@ -83,17 +83,17 @@ input[type=text]:focus, input[type=password]:focus {
     </select>
     <label>Petal Width(cm):</label>
     <input type="text" name="PetalWidthCm">
-    <input type="submit" name="" value="submit">
+    <input type="submit" class="btn" name="" value="submit">
         <br></br>
     {% if Prediction==0 %}
     <img src="/static/setosa.jpg">
-    <h1>Iris Flower Species:Setosa</h1>
+    <h1>IRIS FLOWER SPECIES :SETOSA</h1>
     {% elif Prediction==1 %}
     <img src="/static/versicolor.jpg">
-    <h1>Iris Flower Species:Versicolor</h1>
+    <h1>IRIS FLOWER SPECIES:VERSICOLOR</h1>
     {% elif Prediction==2 %}
     <img src="/static/verginica.jpg">
-    <h1>Iris Flower Species:Virginica</h1>
+    <h1>IRIS FLOWER SPECIES:VIRGINICA</h1>
     {% endif %}
 </form>
 </div>
