@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Species Prediction</title>
+    <style>
+body, html {
+  height: 100%;
+  margin:0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+.bg-img {
+  /* The image used */
+  background-image: url("/static/download1.jpg");
+
+  min-height: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: center;
+  right: 0;
+  margin: 10px;
+  max-width: 500px;
+  padding: 30px;
+  background-color: lightblue;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #04AA6D;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="bg-img" align="center">
+    <h1>Iris Flower Species Prediction</h1>
+    <form method="post" action="/iris/species/prediction" class="container">
+    <label>Sepal Lenght(cm):</label>
+    <input type="text" name="SepalLenghtCm">
+    </select>
+    <label>Sepal Width(cm):</label>
+    <input type="text" name="SepalWidthCm">
+    </select>
+    <label>Petal Lenght(cm):</label>
+    <input type="text" name="PetalLenghtCm">
+    </select>
+    <label>Petal Width(cm):</label>
+    <input type="text" name="PetalWidthCm">
+    <input type="submit" name="" value="submit">
+        <br></br>
+    {% if Prediction==0 %}
+    <img src="/static/setosa.jpg">
+    <h1>Iris Flower Species:Setosa</h1>
+    {% elif Prediction==1 %}
+    <img src="/static/versicolor.jpg">
+    <h1>Iris Flower Species:Versicolor</h1>
+    {% elif Prediction==2 %}
+    <img src="/static/verginica.jpg">
+    <h1>Iris Flower Species:Virginica</h1>
+    {% endif %}
+</form>
+</div>
+
+</body>
+</html>
